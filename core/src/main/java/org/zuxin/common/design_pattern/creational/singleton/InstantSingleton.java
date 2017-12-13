@@ -16,33 +16,24 @@ package org.zuxin.common.design_pattern.creational.singleton;
  * Author： linzuxin
  * Date：   2017/12/12 下午7:57
  */
-public class Singleton {
+public class InstantSingleton{
     /**
      * 创建一个singleton对象，恶汉模式，事先创造
      */
-    private static Singleton singleton = new Singleton();
+    private static InstantSingleton instantSingleton = new InstantSingleton();
 
     /**
      * 私有构造函数，保证该类不能被实例化
      */
-    private Singleton() {
+    private InstantSingleton() {
     }
 
     /**
      * 获取唯一可用实例对象
-     * @return
+     *
+     * @return 单例对象
      */
-    public static Singleton getSingleton() {
-        return singleton;
-    }
-
-    public void sayMessage(String message) {
-        System.out.println(message);
-    }
-
-    public static void main(String[] args) {
-        Singleton singleton = Singleton.getSingleton();
-        singleton.sayMessage("Hello world");
-        singleton.sayMessage("Today weather is good");
+    public static InstantSingleton getObject() {
+        return instantSingleton;
     }
 }

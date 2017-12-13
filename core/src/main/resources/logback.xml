@@ -2,36 +2,31 @@
 
 <configuration>
     <property name="ENCODING" value="UTF-8"/>
+    <property name="FORMAT" value="%date %level [%thread] %logger{36} [%file:%line] - %msg%n" />
 
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <target>System.out</target>
         <encoder>
             <charset class="java.nio.charset.Charset">${ENCODING}</charset>
-            <pattern>
-                %date %level [%thread] %logger{36} [%file:%line] - %msg%n
-            </pattern>
+            <pattern>${FORMAT}</pattern>
         </encoder>
     </appender>
     <appender name="STDERR" class="ch.qos.logback.core.FileAppender">
         <target>System.err</target>
         <encoder>
             <charset class="java.nio.charset.Charset">${ENCODING}</charset>
-            <pattern>
-                %date %level [%thread] %logger{36} [%file:%line] - %msg%n
-            </pattern>
+            <pattern>${FORMAT}</pattern>
         </encoder>
     </appender>
     <appender name="PROJECT.APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- 可让每天产生一个日志文件，最多 10 个，自动回滚 -->
         <file>log/all.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-            <fileNamePattern>${path}/all.log.%d{yyyy-MM-dd}</fileNamePattern>
+            <fileNamePattern>log/all.log.%d{yyyy-MM-dd}</fileNamePattern>
             <maxHistory>10</maxHistory>
         </rollingPolicy>
         <encoder charset="${ENCODING}">
-            <pattern>
-                %date %level [%thread] %logger{36} [%file:%line] - %msg%n
-            </pattern>
+            <pattern>${FORMAT}</pattern>
         </encoder>
     </appender>
 
@@ -39,12 +34,7 @@
         <appender-ref ref="PROJECT.APPENDER"/>
         <appender-ref ref="STDOUT"/>
     </logger>
-
     <logger name="org.springframework" level="ERROR" additivity="false"/>
-    <logger name="org.apache.commons.beanutils" level="ERROR" additivity="false"/>
-    <logger name="org.apache.commons.digester" level="ERROR" additivity="false"/>
-    <logger name="com.alibaba.rocketmq.client" level="ERROR" additivity="false" />
-    <logger name="ch.qos.logback" level="ERROR" additivity="false" />
 
     <root level="ERROR">
         <appender-ref ref="STDOUT"/>
