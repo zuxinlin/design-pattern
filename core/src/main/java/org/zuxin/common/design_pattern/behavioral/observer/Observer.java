@@ -1,4 +1,4 @@
-package org.zuxin.common.design_pattern.behavioral.state;
+package org.zuxin.common.design_pattern.behavioral.observer;
 
 /**
  * 观察者抽象类，定义收到通知后的操作

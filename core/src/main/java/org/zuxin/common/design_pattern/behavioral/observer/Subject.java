@@ -1,4 +1,4 @@
-package org.zuxin.common.design_pattern.behavioral.state;
+package org.zuxin.common.design_pattern.behavioral.observer;
 
 import com.google.common.collect.Lists;
 
