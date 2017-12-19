@@ -7,8 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.*;
 
 /**
- * Copyright (C) 2016 Taobao.com 淘宝（中国）软件有限公司 版权所有.
- * 商家&运营平台-运营平台
+ * 单例调用类
  * <p/>
  * Author： linzuxin
  * Date：   2017/12/13 下午10:10

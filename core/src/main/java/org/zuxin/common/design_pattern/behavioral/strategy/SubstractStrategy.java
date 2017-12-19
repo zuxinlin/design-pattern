@@ -3,8 +3,7 @@ package org.zuxin.common.design_pattern.behavioral.strategy;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * Copyright (C) 2016 Taobao.com 淘宝（中国）软件有限公司 版权所有.
- * 商家&运营平台-运营平台
+ * 减法策略类
  * <p/>
  * Author： linzuxin
  * Date：   2017/12/14 下午3:52
