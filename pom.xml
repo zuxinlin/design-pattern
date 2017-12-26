@@ -13,7 +13,7 @@
         <java.encoding>UTF-8</java.encoding>
 
         <protobuf-version>2.4.1</protobuf-version>
-        <spring-version>4.1.6.RELEASE</spring-version>
+        <springboot-version>1.5.9.RELEASE</springboot-version>
         <mybatis-version>3.4.5</mybatis-version>
         <autoconfig-plugin-version>1.0</autoconfig-plugin-version>
         <slf4j-version>1.7.21</slf4j-version>
@@ -25,6 +25,7 @@
 
     <modules>
         <module>core</module>
+        <module>starter</module>
     </modules>
 
     <dependencyManagement>
@@ -79,12 +80,6 @@
     </dependencyManagement>
 
     <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-source-plugin</artifactId>
-            </plugin>
-        </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>

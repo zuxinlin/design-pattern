@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+    <property name="APP_NAME" value="design-pattern"/>
+    <property name="LOG_PATH" value="${user.home}/${APP_NAME}/logs"/>
+    <property name="LOG_FILE" value="${LOG_PATH}/application.log"/>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <target>System.out</target>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>
+                %date %level [%thread] %logger{36} [%file:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="all" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/all.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/all.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <append>true</append>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>
+                %date %level [%thread] %logger{36} [%file:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+    <appender name="${APP_NAME}" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}/${APP_NAME}.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <FileNamePattern>${LOG_PATH}/${APP_NAME}.log.%d{yyyy-MM-dd}</FileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <append>true</append>
+        <encoder>
+            <charset class="java.nio.charset.Charset">UTF-8</charset>
+            <pattern>
+                %date %level [%thread] %logger{36} [%file:%line] - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="com.zuxin" level="info" additivity="false">
+        <appender-ref ref="${APP_NAME}"/>
+        <appender-ref ref="STDOUT"/>
+    </logger>
+
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="all"/>
+    </root>
+</configuration>
