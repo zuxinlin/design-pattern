@@ -1,4 +1,4 @@
-package test.java.org.zuxin.common;
+package org.zuxin.common;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
