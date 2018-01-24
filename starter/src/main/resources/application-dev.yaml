@@ -1,0 +1,13 @@
+server:
+  port: 7001
+
+my:
+  name: test
+  port: 8080
+  servers:
+    - dev.bar.com
+    - foo.bar.com
+        
+management:
+  security:
+    enabled: false

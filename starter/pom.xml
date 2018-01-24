@@ -2,10 +2,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<parent>
+		<!-- 定义了 Spring Boot版本的基础依赖以及一些默认配置内容，比如，配置文件 application.properties 的位置等 -->
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>1.5.9.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath/>
 	</parent>
 	<!--<parent>-->
 		<!--<groupId>org.zuxin.common</groupId>-->
@@ -22,22 +23,27 @@
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>
-		<!-- 引入web模块，添加了Tomcat和Spring MVC -->
+		<!-- 全栈 Web 开发模块，包含嵌入式 Tomcat、Spring MVC -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
+		<!-- 通用测试模块，包含 JUnit、Hamcrest、Mockito -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
 		<!-- 热部署模块，需要idea开启自动编译project -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
+		</dependency>
+		<!-- 提供的对应用系统的自省和监控的集成功能，可以对应用系统进行配置查看、相关功能统计等-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<!-- lombok -->
